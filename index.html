@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>AI Resume Generator</h1>
+            <form id="resumeForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills (comma separated)</label>
+                    <textarea id="skills" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <textarea id="experience" required placeholder="Format: Company - Position - Years&#10;One entry per line"></textarea>
+                </div>
+                <button type="submit">Generate Resume</button>
+            </form>
+        </div>       
+        <div class="preview-section">
+            <div id="resumePreview" class="resume">
+                <h2 id="previewName"></h2>
+                <div class="section">
+                    <h3>Skills</h3>
+                    <div id="previewSkills" class="skills-container"></div>
+                </div>
+                <div class="section">
+                    <h3>Experience</h3>
+                    <div id="previewExperience"></div>
+                </div>
+            </div>
+            <button id="downloadPDF" class="download-btn" style="display: none;">Download PDF</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
