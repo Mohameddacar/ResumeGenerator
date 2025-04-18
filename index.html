@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resume Generator</title>
+    <title>Modern Resume Generator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -11,33 +11,61 @@
 <body>
     <div class="container">
         <div class="form-section">
-            <h1>AI Resume Generator</h1>
+            <h1>Resume Generator</h1>
             <form id="resumeForm">
+                <div class="form-group">
+                    <label for="photo">Profile Photo</label>
+                    <input type="file" id="photo" accept="image/*" required>
+                </div>
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="skills">Skills (comma separated)</label>
-                    <textarea id="skills" required></textarea>
+                    <label for="summary">Professional Summary</label>
+                    <textarea id="summary" required placeholder="Brief professional summary"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="experience">Experience</label>
-                    <textarea id="experience" required placeholder="Format: Company - Position - Years&#10;One entry per line"></textarea>
+                    <label for="skills">Skills (one per line)</label>
+                    <textarea id="skills" required placeholder="Web Development&#10;Backend&#10;System Design"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <textarea id="education" required placeholder="Degree - Institution - Year&#10;One entry per line"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Work Experience</label>
+                    <textarea id="experience" required placeholder="Position&#10;Company&#10;Duration&#10;Description&#10;---"></textarea>
                 </div>
                 <button type="submit">Generate Resume</button>
             </form>
-        </div>       
+        </div>
+        
         <div class="preview-section">
             <div id="resumePreview" class="resume">
-                <h2 id="previewName"></h2>
-                <div class="section">
-                    <h3>Skills</h3>
-                    <div id="previewSkills" class="skills-container"></div>
+                <div class="resume-sidebar">
+                    <div class="profile-section">
+                        <div class="profile-photo" id="previewPhoto"></div>
+                        <h1 id="previewName"></h1>
+                    </div>
+                    <div class="sidebar-section">
+                        <h2>SKILLS</h2>
+                        <ul id="previewSkills" class="skills-list"></ul>
+                    </div>
                 </div>
-                <div class="section">
-                    <h3>Experience</h3>
-                    <div id="previewExperience"></div>
+                <div class="resume-main">
+                    <div class="section">
+                        <h2>PROFESSIONAL SUMMARY</h2>
+                        <p id="previewSummary"></p>
+                    </div>
+                    <div class="section">
+                        <h2>EDUCATION</h2>
+                        <div id="previewEducation"></div>
+                    </div>
+                    <div class="section">
+                        <h2>WORK EXPERIENCE</h2>
+                        <div id="previewExperience"></div>
+                    </div>
                 </div>
             </div>
             <button id="downloadPDF" class="download-btn" style="display: none;">Download PDF</button>

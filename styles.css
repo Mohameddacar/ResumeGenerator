@@ -68,61 +68,130 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Resume Preview Styles */
 .preview-section {
     background: white;
-    padding: 2rem;
+    padding: 0;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .resume {
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 842px; /* A4 height ratio */
 }
 
-.resume h2 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+.resume-sidebar {
+    background: #1a1528;
+    color: white;
+    padding: 2rem;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-sidebar h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-section h2 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-list {
+    list-style: none;
+}
+
+.skills-list li {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.resume-main {
+    padding: 2rem;
+    background: white;
 }
 
 .section {
     margin-bottom: 2rem;
 }
 
-.section h3 {
-    color: #34495e;
+.section h2 {
+    color: #2c3e50;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #3498db;
-}
-
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.skill {
-    background-color: #e8f4fc;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #2980b9;
+    text-transform: uppercase;
 }
 
 .experience-item {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    border-left: 3px solid #3498db;
+    margin-bottom: 1.5rem;
 }
 
-.experience-item p {
+.experience-item h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.experience-item .company {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.experience-item .duration {
     color: #7f8c8d;
-    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-item {
+    margin-bottom: 1rem;
+}
+
+.education-item h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.education-item .institution {
+    color: #3498db;
+}
+
+#previewSummary {
+    color: #34495e;
+    line-height: 1.6;
 }
 
 .download-btn {
     width: 100%;
+    margin-top: 1rem;
     background-color: #27ae60;
 }
 
@@ -137,5 +206,9 @@ button:hover {
     
     body {
         padding: 1rem;
+    }
+
+    .resume {
+        grid-template-columns: 1fr;
     }
 } 
